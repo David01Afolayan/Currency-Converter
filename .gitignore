@@ -1,0 +1,5 @@
+.vscode/
+
+# Local secrets and generated files
+.env
+conversion-history.json

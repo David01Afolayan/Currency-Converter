@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Currency Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-wrapper">
+    <section class="container">
+      <header class="header-row">
+        <h1>Currency Converter</h1>
+        <button id="openSettings" class="ghost">Settings ⚙️</button>
+      </header>
+
+      <form id="converterForm" class="controls" aria-label="Currency converter">
+        <label class="field">
+          <span class="label-text">Amount</span>
+          <input type="number" id="amount" placeholder="Enter amount" inputmode="decimal" step="any" required />
+        </label>
+
+        <label class="field">
+          <span class="label-text">From</span>
+          <select id="from" aria-label="From currency"></select>
+        </label>
+
+        <label class="field">
+          <span class="label-text">To</span>
+          <select id="to" aria-label="To currency"></select>
+        </label>
+
+        <div class="actions">
+          <button id="convertBtn" type="button" class="primary">Convert</button>
+          <button id="swap" type="button" class="ghost" title="Swap currencies" aria-label="Swap currencies">⇄</button>
+        </div>
+      </form>
+
+      <div id="result" class="result" role="status" aria-live="polite">
+        <div class="result-main">No conversion yet</div>
+        <div class="result-meta">
+          <button id="copyResult" class="ghost">Copy</button>
+          <span id="rateInfo" class="muted"></span>
+        </div>
+      </div>
+
+    </section>
+
+    <aside class="container history" aria-labelledby="historyTitle">
+      <h3 id="historyTitle">Conversion History</h3>
+      <ul id="historyList"></ul>
+      <div class="history-actions">
+        <button id="clearHistory" class="ghost">Clear History</button>
+        <button id="exportHistory" class="ghost">Export</button>
+      </div>
+    </aside>
+
+    <!-- Settings panel (hidden by default) -->
+    <dialog id="settingsDialog" class="settings">
+      <form method="dialog" id="settingsForm">
+        <h3>Settings</h3>
+        <label class="field inline">
+          <span class="label-text">Decimal precision</span>
+          <input id="precision" type="number" min="0" max="8" value="4" />
+        </label>
+
+        <label class="field inline">
+          <span class="label-text">Cache TTL (minutes)</span>
+          <input id="cacheTtl" type="number" min="0" max="1440" value="10" />
+        </label>
+
+        <div class="settings-actions">
+          <button id="saveSettings" class="primary">Save</button>
+          <button id="closeSettings" class="ghost">Close</button>
+        </div>
+      </form>
+    </dialog>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
