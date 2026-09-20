@@ -2,7 +2,7 @@
 
 Live currency converter that fetches real-time exchange rates via API. Supports conversion between 150+ currencies with a responsive design.
 
-**Live Demo:** 
+**Live Demo:** https://david01afolayan.github.io/Currency-Converter/
 **Repo:** https://github.com/David01Afolayan/Currency-Converter
 
 ## Features
